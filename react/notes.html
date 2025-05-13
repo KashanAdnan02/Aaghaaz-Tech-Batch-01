@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React.js Notes</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            line-height: 1.6;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #d63384;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>React.js Notes</h1>
+            <!-- Class 01 -->
+            <h1>Class 01</h1>
+            <h2>1. Introduction to React.js</h2>
+            <h3>What is React?</h3>
+            <p>
+                React ek
+                <b>JavaScript library</b>
+                hai jo
+                <b>user interfaces (UI)</b>
+                banane ke liye use hoti hai. Yeh
+                <b>Facebook</b>
+                ne develop ki thi aur ab
+                <b>open-source</b>
+                hai. React ka main focus
+                <b>fast, scalable, aur simple</b>
+                web applications banane par hota hai.
+            </p>
+            <h3>Why Use React?</h3>
+            <h4>1. Component-Based Architecture</h4>
+            <ul>
+                <li>
+                    React
+                    <b>components</b>
+                    ka use karta hai, jisme ek UI ka
+                    <b>chhota part ek independent component</b>
+                    hota hai.
+                </li>
+                <li>
+                    Components
+                    <b>reusable</b>
+                    hote hain, jo development ko
+                    <b>fast aur efficient</b>
+                    banata hai.
+                </li>
+            </ul>
+            <h4>2. Fast Performance (Virtual DOM)</h4>
+            <ul>
+                <li>
+                    React ek
+                    <b>Virtual DOM</b>
+                    use karta hai, jo browser ke
+                    <b>original DOM se fast</b>
+                    hota hai.
+                </li>
+                <li>
+                    Yeh sirf
+                    <b>necessary changes apply</b>
+                    karta hai, jo
+                    <b>performance improve</b>
+                    karta hai.
+                </li>
+            </ul>
+            <h4>3. Single Page Application (SPA) Development</h4>
+            <ul>
+                <li>
+                    React mostly
+                    <b>SPA applications</b>
+                    banane ke liye use hota hai, jisme ek hi page dynamically update hota hai
+                    <b>bina reload kiye</b>
+                    .
+                </li>
+            </ul>
+            <h4>4. Reusability & Maintainability</h4>
+            <ul>
+                <li>
+                    <b>Components reusable hote hain</b>
+                    , jo
+                    <b>code maintain karna easy</b>
+                    banata hai.
+                </li>
+            </ul>
+            <h2>2. Single Page Application (SPA)</h2>
+            <h3>What is SPA?</h3>
+            <p>
+                SPA ek aisi web application hai jo
+                <b>sirf ek HTML page load karti hai</b>
+                aur dynamically content update karti hai bina page reload kiye.
+            </p>
+            <h3>How SPA Works?</h3>
+            <h4>1. Initial Load</h4>
+            <ul>
+                <li>
+                    Jab ek user website open karta hai, toh ek single
+                    <b>HTML file</b>
+                    browser me load hoti hai.
+                </li>
+                <li>
+                    Saara
+                    <b>JavaScript, CSS</b>
+                    ek sath load ho jata hai ya phir dynamically fetch hota hai.
+                </li>
+            </ul>
+            <h4>2. Routing (Client-Side Routing)</h4>
+            <ul>
+                <li>
+                    Traditional websites me har page load hone par
+                    <b>server se naye HTML pages fetch</b>
+                    hote hain.
+                </li>
+                <li>
+                    SPA me routing
+                    <b>JavaScript</b>
+                    se hoti hai, aur
+                    <b>React Router</b>
+                    jese libraries use ki jati hain jo bina page reload kiye naye components show karti hain.
+                </li>
+            </ul>
+            <h2>3. React vs. Vanilla JavaScript</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>React</th>
+                    <th>Vanilla JavaScript</th>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>JavaScript Library</td>
+                    <td>Plain JavaScript</td>
+                </tr>
+                <tr>
+                    <td>DOM Manipulation</td>
+                    <td>Uses Virtual DOM (Fast)</td>
+                    <td>Uses Real DOM (Slower)</td>
+                </tr>
+                <tr>
+                    <td>UI Structure</td>
+                    <td>Component-Based Architecture</td>
+                    <td>Manually manage karna hota hai</td>
+                </tr>
+                <tr>
+                    <td>Performance</td>
+                    <td>Fast due to Virtual DOM</td>
+                    <td>Slow due to direct DOM updates</td>
+                </tr>
+                <tr>
+                    <td>Reusability</td>
+                    <td>Components can be reused</td>
+                    <td>Code reuse difficult</td>
+                </tr>
+            </table>
+            <!-- Class 02 -->
+            <h1>Class 02</h1>
+            <h2>4. JSX (JavaScript XML)</h2>
+            <h3>What is JSX?</h3>
+            <p>
+                JSX ek syntax extension hai jo React ke andar
+                <b>HTML-like structure</b>
+                likhne ke liye use hota hai. Yeh JavaScript ke andar HTML likhne ki suvidha deta hai.
+            </p>
+            <h3>Why Use JSX?</h3>
+            <ul>
+                <li>
+                    <b>HTML aur JavaScript</b>
+                    ko combine karta hai.
+                </li>
+                <li>
+                    <b>Code readability</b>
+                    aur maintainability improve hoti hai.
+                </li>
+                <li>
+                    <b>Babel compiler</b>
+                    JSX ko JavaScript me convert karta hai, jo browser me efficiently execute hota hai.
+                </li>
+            </ul>
+            <h2>What is useState Hook?</h2>
+            <p>
+                <code>useState</code>
+                is a React Hook that allows you to add state management to functional components. It helps store and update values within a component, ensuring React re-renders the component whenever the state changes.
+            </p>
+            <h2>Why Use useState Instead of Regular Variables?</h2>
+            <p>
+                React does not track changes in normal variables, meaning updates won’t trigger a re-render of the component.
+                <code>useState</code>
+                ensures that when a state value changes, React automatically updates the UI.
+            </p>
+            <h1>Example: Counter App</h1>
+            <h2>Counter with Variable (UI Doesn't Update)</h2>
+            <pre>
+                <code>
+                    let count = 0;
+
+function Example() {
+  function increase() {
+    count += 1;
+    console.log(count); // Updates in console, but UI doesn't update
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt; {/* UI remains the same */}
+      &lt;button onClick={increase}&gt;Increase&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+                </code>
+            </pre>
+            <h3>Issue Using Variable</h3>
+            <p>
+                The UI does not update when
+                <code>count</code>
+                changes because React does not track it.
+            </p>
+            <h2>Counter with useState (UI Updates Correctly)</h2>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  function increase() {
+    setCount(count + 1); // Updates state and re-renders the component
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt; {/* UI updates correctly */}
+      &lt;button onClick={increase}&gt;Increase&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+                </code>
+            </pre>
+            <h2>Why useState is Better?</h2>
+            <ul>
+                <li>Triggers a Re-render – The UI updates when the state changes.</li>
+                <li>Persistent State – React keeps track of state across renders.</li>
+                <li>React’s Virtual DOM Optimization – Ensures efficient updates.</li>
+            </ul>
+            <h1>useState Real-World Use Cases</h1>
+            <h2>1. Form Handling (User Input Storage)</h2>
+            <p>Use Case: When we need to store and update input values in a form.</p>
+            <h2>2. Toggle Feature (Show/Hide Password, Theme Toggle, Sidebar Toggle)</h2>
+            <p>Use Case: When we need to toggle a feature on/off, such as showing/hiding a password.</p>
+            <h2>3. Counter App (Like Button, Cart Quantity, Steps Tracker)</h2>
+            <p>Use Case: Tracking numbers such as likes, cart items, or steps.</p>
+            <h2>useState Syntax</h2>
+            <pre>
+                <code>
+                    const [state, setState] = useState(initialValue);
+                </code>
+            </pre>
+            <h3>Breakdown</h3>
+            <ul>
+                <li>
+                    <code>state</code>
+                    : The current value of the state.
+                </li>
+                <li>
+                    <code>setState</code>
+                    : The function used to update the state.
+                </li>
+                <li>
+                    <code>initialValue</code>
+                    : The initial state value (can be a number, string, boolean, object, or array).
+                </li>
+            </ul>
+            <h1>Examples of States</h1>
+            <h2>State with Number</h2>
+            <pre>
+                <code>const [count, setCount] = useState(0);</code>
+            </pre>
+            <h2>State with String</h2>
+            <pre>
+                <code>const [name, setName] = useState("abc");</code>
+            </pre>
+            <h2>State with Boolean</h2>
+            <pre>
+                <code>const [isLoggedIn, setIsLoggedIn] = useState(false);</code>
+            </pre>
+            <h2>State with Object</h2>
+            <pre>
+                <code>const [user, setUser] = useState({ name: "John Doe", age: 30 });</code>
+            </pre>
+            <h2>State with Array</h2>
+            <pre>
+                <code>const [items, setItems] = useState(["Apple", "Mango"]);</code>
+            </pre>
+            <h1>Handling Multiple useState Variables</h1>
+            <h2>Example: Form Handling with Multiple States</h2>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function UserForm() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        placeholder="Enter name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      /&gt;
+      &lt;input
+        type="number"
+        placeholder="Enter age"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+      /&gt;
+      &lt;h3&gt;Name: {name}, Age: {age}&lt;/h3&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default UserForm;
+                </code>
+            </pre>
+            <h3>Key Learning Points:</h3>
+            <ul>
+                <li>
+                    Multiple
+                    <code>useState</code>
+                    variables ek saath kaise use karein.
+                </li>
+                <li>
+                    <code>onChange</code>
+                    event kaise kaam karta hai.
+                </li>
+                <li>Controlled components concept.</li>
+            </ul>
+            <h2>Task: Create a Form with Name, Email & Password Fields</h2>
+            <h1>Updating State with Previous State</h1>
+            <h2>useState with Previous Values (Why Use a Callback Function?)</h2>
+            <p>
+                Whenever the new state depends on the previous state, we should always use the callback function inside
+                <code>setState</code>
+                .
+            </p>
+            <h2>Why Should We Use a Callback Function?</h2>
+            <p>
+                React batches state updates, meaning multiple updates inside one function might not reflect immediately. If we directly use
+                <code>setState(value)</code>
+                , React might not update it as expected. Instead, we should use the function version:
+            </p>
+            <pre>
+                <code>setState((prevState) => newValue);</code>
+            </pre>
+            <p>This ensures we get the latest previous value before updating.</p>
+            <h2>Example</h2>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const incrementByTwo = () => {
+    setCount((prevCount) => prevCount + 2);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Counter: {count}&lt;/h2&gt;
+      &lt;button onClick={incrementByTwo}&gt;Increment by 2&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+                </code>
+            </pre>
+            <h1>State with Arrays & Objects</h1>
+            <h2>Example with Array</h2>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function TodoList() {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = () => {
+    setTasks([...tasks, `Task ${tasks.length + 1}`]);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;
+      &lt;ul&gt;
+        {tasks.map((task, index) => (
+          &lt;li key={index}&gt;{task}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default TodoList;
+                </code>
+            </pre>
+            <h2>Task: Create a "To-Do List" Where Users Can Add and Remove Items</h2>
+            <h3>Example of To-Do List</h3>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function TodoList() {
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState("");
+
+  // Function to add a new task
+  const addTask = () => {
+    if (task.trim() !== "") {
+      setTasks([...tasks, task]);
+      setTask(""); // Clear input field
+    }
+  };
+
+  // Function to remove a task
+  const removeTask = (index) => {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  };
+
+  return (
+    &lt;div style={{ textAlign: "center", padding: "20px" }}&gt;
+      &lt;h2&gt;To-Do List&lt;/h2&gt;
+      &lt;input
+        type="text"
+        placeholder="Enter a task"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      /&gt;
+      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;
+
+      &lt;ul&gt;
+        {tasks.map((t, index) => (
+          &lt;li key={index}&gt;
+            {t} &lt;button onClick={() => removeTask(index)}&gt;❌&lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default TodoList;
+                </code>
+            </pre>
+            <h1>Dark Mode & Light Mode Using useState</h1>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function ThemeSwitcher() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  return (
+    &lt;div style={{ background: darkMode ? "black" : "white", color: darkMode ? "white" : "black", height: "100vh", textAlign: "center", padding: "50px" }}&gt;
+      &lt;h1&gt;{darkMode ? "Dark Mode" : "Light Mode"}&lt;/h1&gt;
+      &lt;button onClick={() => setDarkMode(!darkMode)}&gt;Toggle Theme&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default ThemeSwitcher;
+                </code>
+            </pre>
+            <!-- Class 3 -->
+            <h1>Class 03</h1>
+            <h1>Components and Props</h1>
+            <h2>1. What are Components?</h2>
+            <p>
+                Components are the building blocks of a React application. They are reusable and independent pieces of code that represent a part of the user interface (UI). Each component can have its own state, logic, and structure.
+            </p>
+            <h3>Types of Components</h3>
+            <ul>
+                <li>
+                    <b>Functional Components:</b>
+                    Simple JavaScript functions that return JSX.
+                </li>
+                <li>
+                    <b>Class Components:</b>
+                    ES6 classes that extend
+                    <code>React.Component</code>
+                    and have additional features like lifecycle methods.
+                </li>
+            </ul>
+            <h2>2. Functional Components</h2>
+            <p>
+                Functional components are the simplest way to create a component. They are JavaScript functions that return JSX.
+            </p>
+            <h3>Example of a Functional Component</h3>
+            <pre>
+                <code>
+                    function Greeting() {
+  return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+}
+
+export default Greeting;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>Functional components are stateless by default (before React 16.8).</li>
+                <li>They are easier to read, test, and debug.</li>
+                <li>
+                    With React Hooks (like
+                    <code>useState</code>
+                    ), functional components can now manage state.
+                </li>
+            </ul>
+            <h2>3. Class Components</h2>
+            <p>
+                Class components are ES6 classes that extend
+                <code>React.Component</code>
+                . They have additional features like state and lifecycle methods.
+            </p>
+            <h3>Example of a Class Component</h3>
+            <pre>
+                <code>
+                    import React from "react";
+
+class Greeting extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+  }
+}
+
+export default Greeting;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>Class components can hold and manage state.</li>
+                <li>
+                    They have lifecycle methods like
+                    <code>componentDidMount</code>
+                    ,
+                    <code>componentDidUpdate</code>
+                    , etc.
+                </li>
+                <li>Class components are more verbose compared to functional components.</li>
+            </ul>
+            <h2>4. Props (Properties)</h2>
+            <p>
+                Props are used to pass data from one component to another. They are read-only and help make components reusable and dynamic.
+            </p>
+            <h3>Example of Using Props</h3>
+            <pre>
+                <code>
+                    function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+export default Greeting;
+                </code>
+            </pre>
+            <p>Usage:</p>
+            <pre>
+                <code>
+                    import Greeting from "./Greeting";
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Greeting name="John" /&gt;
+      &lt;Greeting name="Jane" /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>Props are immutable (cannot be modified by the child component).</li>
+                <li>They are passed from parent to child components.</li>
+                <li>Props can be used to customize the behavior and appearance of components.</li>
+            </ul>
+            <h2>5. Default Props</h2>
+            <p>
+                Default props are used to provide default values for props in case they are not passed from the parent component.
+            </p>
+            <h3>Example of Default Props</h3>
+            <pre>
+                <code>
+                    function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+Greeting.defaultProps = {
+  name: "Guest",
+};
+
+export default Greeting;
+                </code>
+            </pre>
+            <p>Usage:</p>
+            <pre>
+                <code>
+                    import Greeting from "./Greeting";
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Greeting /&gt; {/* Output: Hello, Guest! */}
+      &lt;Greeting name="John" /&gt; {/* Output: Hello, John! */}
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>6. PropTypes</h2>
+            <p>
+                PropTypes are used to validate the type of props passed to a component. They help catch bugs by ensuring that the correct data types are passed.
+            </p>
+            <h3>Example of PropTypes</h3>
+            <pre>
+                <code>
+                    import PropTypes from "prop-types";
+
+function Greeting(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export default Greeting;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>PropTypes are optional but highly recommended for larger applications.</li>
+                <li>They help in debugging by providing warnings in the console if the wrong data type is passed.</li>
+            </ul>
+            <h2>7. Passing Functions as Props</h2>
+            <p>
+                Functions can also be passed as props to child components. This allows child components to communicate with parent components.
+            </p>
+            <h3>Example of Passing Functions as Props</h3>
+            <pre>
+                <code>
+                    function ChildComponent(props) {
+  return &lt;button onClick={props.onClick}&gt;Click Me&lt;/button&gt;;
+}
+
+function ParentComponent() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
+  return &lt;ChildComponent onClick={handleClick} /&gt;;
+}
+
+export default ParentComponent;
+                </code>
+            </pre>
+            <h2>8. Component Composition</h2>
+            <p>
+                Component composition is the process of combining smaller components to build more complex UIs. It promotes reusability and separation of concerns.
+            </p>
+            <h3>Example of Component Composition</h3>
+            <pre>
+                <code>
+                    function Header() {
+  return &lt;h1&gt;Header&lt;/h1&gt;;
+}
+
+function Content() {
+  return &lt;p&gt;This is the content.&lt;/p&gt;;
+}
+
+function Footer() {
+  return &lt;footer&gt;Footer&lt;/footer&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;Content /&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>9. Task: Create a User Card Component</h2>
+            <p>
+                Create a reusable
+                <code>UserCard</code>
+                component that displays user details (name, email, and profile picture) using props.
+            </p>
+            <h3>Example Solution</h3>
+            <pre>
+                <code>
+                    function UserCard(props) {
+  return (
+    &lt;div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px", borderRadius: "5px" }}&gt;
+      &lt;img src={props.avatar} alt="User Avatar" style={{ width: "100px", borderRadius: "50%" }} /&gt;
+      &lt;h2&gt;{props.name}&lt;/h2&gt;
+      &lt;p&gt;{props.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default UserCard;
+                </code>
+            </pre>
+            <p>Usage:</p>
+            <pre>
+                <code>
+                    import UserCard from "./UserCard";
+
+function App() {
+  const user = {
+    name: "John Doe",
+    email: "john@example.com",
+    avatar: "https://via.placeholder.com/150",
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;UserCard name={user.name} email={user.email} avatar={user.avatar} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>10. Summary</h2>
+            <ul>
+                <li>Components are reusable building blocks of a React application.</li>
+                <li>Functional components are simple and lightweight, while class components offer more features.</li>
+                <li>Props are used to pass data between components and make them dynamic.</li>
+                <li>Default props and PropTypes help in managing and validating props.</li>
+                <li>Component composition promotes reusability and separation of concerns.</li>
+            </ul>
+            <!-- Class 04 -->
+            <h1>Class 04: Event Handling in React</h1>
+            <h2>1. What is Event Handling?</h2>
+            <p>
+                Event handling in React allows you to respond to user interactions like clicks, input changes, form submissions, etc. React events are similar to DOM events but are written in camelCase (e.g.,
+                <code>onClick</code>
+                instead of
+                <code>onclick</code>
+                ).
+            </p>
+            <h2>2. Common Events in React</h2>
+            <p>
+                React supports a wide range of events. Here are some commonly used ones:
+            </p>
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>
+                        <code>onClick</code>
+                    </td>
+                    <td>Triggered when an element is clicked.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>onChange</code>
+                    </td>
+                    <td>Triggered when the value of an input, select, or textarea changes.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>onSubmit</code>
+                    </td>
+                    <td>Triggered when a form is submitted.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>onMouseOver</code>
+                    </td>
+                    <td>Triggered when the mouse pointer moves over an element.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>onKeyDown</code>
+                    </td>
+                    <td>Triggered when a key is pressed down.</td>
+                </tr>
+            </table>
+            <h2>3. Handling Events in React</h2>
+            <p>
+                In React, event handlers are passed as functions to the event attributes (e.g.,
+                <code>onClick</code>
+                ,
+                <code>onChange</code>
+                ). These functions are called when the event occurs.
+            </p>
+            <h3>Example: Handling a Click Event</h3>
+            <pre>
+                <code>
+                    function App() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h3>Example: Handling an Input Change Event</h3>
+            <pre>
+                <code>
+                    function App() {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Type something..."
+      /&gt;
+      &lt;p&gt;You typed: {inputValue}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>4. Passing Arguments to Event Handlers</h2>
+            <p>
+                Sometimes, you may need to pass additional arguments to an event handler. This can be done using an arrow function.
+            </p>
+            <h3>Example: Passing Arguments</h3>
+            <pre>
+                <code>
+                    function App() {
+  const handleClick = (message) => {
+    alert(message);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() => handleClick("Hello!")}&gt;Say Hello&lt;/button&gt;
+      &lt;button onClick={() => handleClick("Goodbye!")}&gt;Say Goodbye&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>5. Preventing Default Behavior</h2>
+            <p>
+                In some cases, you may want to prevent the default behavior of an event (e.g., preventing a form from submitting). This can be done using
+                <code>event.preventDefault()</code>
+                .
+            </p>
+            <h3>Example: Preventing Form Submission</h3>
+            <pre>
+                <code>
+                    function App() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("Form submitted!");
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input type="text" placeholder="Enter your name" /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>6. Synthetic Events</h2>
+            <p>
+                React uses
+                <b>synthetic events</b>
+                to wrap native browser events. These events work consistently across all browsers and provide additional features.
+            </p>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>
+                    Synthetic events are instances of
+                    <code>SyntheticEvent</code>
+                    .
+                </li>
+                <li>
+                    They have the same interface as native events (e.g.,
+                    <code>event.target</code>
+                    ,
+                    <code>event.preventDefault()</code>
+                    ).
+                </li>
+                <li>React pools synthetic events for performance optimization.</li>
+            </ul>
+            <h2>7. Task: Create a Button That Toggles Text</h2>
+            <p>
+                Create a button that toggles between "Show" and "Hide" text when clicked.
+            </p>
+            <h3>Example Solution</h3>
+            <pre>
+                <code>
+                    function App() {
+  const [showText, setShowText] = useState(true);
+
+  const toggleText = () => {
+    setShowText(!showText);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={toggleText}&gt;{showText ? "Hide" : "Show"}&lt;/button&gt;
+      {showText && &lt;p&gt;This is some text!&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>8. Task: Create a Form with Validation</h2>
+            <p>
+                Create a form with name and email fields. Validate that both fields are filled before allowing submission.
+            </p>
+            <h3>Example Solution</h3>
+            <pre>
+                <code>
+                    function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!name || !email) {
+      setError("Please fill in all fields.");
+    } else {
+      setError("");
+      alert(`Name: ${name}, Email: ${email}`);
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      /&gt;
+      &lt;input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      /&gt;
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      {error && &lt;p style={{ color: "red" }}&gt;{error}&lt;/p&gt;}
+    &lt;/form&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>9. Summary</h2>
+            <ul>
+                <li>
+                    Event handling in React is similar to DOM events but uses camelCase (e.g.,
+                    <code>onClick</code>
+                    ).
+                </li>
+                <li>Event handlers are passed as functions to event attributes.</li>
+                <li>You can pass arguments to event handlers using arrow functions.</li>
+                <li>
+                    Use
+                    <code>event.preventDefault()</code>
+                    to prevent default behavior.
+                </li>
+                <li>React uses synthetic events for cross-browser consistency.</li>
+            </ul>
+            <!-- New Content: map(), Unique Keys, and Dynamic Lists -->
+            <h2>10. Using the
+                <code>map()</code> Function
+            </h2>
+            <p>
+                The
+                <code>map()</code> function is a powerful JavaScript method used to transform arrays. In React, it is commonly used to render
+                <b>dynamic lists</b>
+                of components.
+            </p>
+            <h3>How
+                <code>map()</code> Works
+            </h3>
+            <ul>
+                <li>
+                    <code>map()</code> iterates over an array and returns a new array.
+                </li>
+                <li>Each element of the original array is transformed based on the function provided to
+                    <code>map()</code>.
+                </li>
+                <li>In React, it is used to create a list of JSX elements.</li>
+            </ul>
+            <h3>Example: Rendering a List Using
+                <code>map()</code>
+            </h3>
+            <pre>
+                <code>
+                    function App() {
+  const fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+  return (
+    &lt;ul&gt;
+      {fruits.map((fruit, index) => (
+        &lt;li key={index}&gt;{fruit}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>11. The Concept of Unique Keys</h2>
+            <p>
+                When rendering lists in React, each element must have a
+                <b>unique key</b>
+                . Keys help React identify which items have changed, been added, or been removed.
+            </p>
+            <h3>Why Are Keys Important?</h3>
+            <ul>
+                <li>Keys help React efficiently update the UI by tracking changes to the list.</li>
+                <li>Without keys, React may re-render the entire list, leading to performance issues.</li>
+                <li>Keys should be unique among siblings (not globally unique).</li>
+            </ul>
+            <h3>Example: Using Unique Keys</h3>
+            <pre>
+                <code>
+                    function App() {
+  const users = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Jane" },
+    { id: 3, name: "Alice" },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users.map((user) => (
+        &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>Use a unique identifier (e.g.,
+                    <code>id</code>) as the key.
+                </li>
+                <li>Avoid using the
+                    <code>index</code> as the key if the list can change (e.g., items can be added, removed, or reordered).
+                </li>
+            </ul>
+            <h2>12. Rendering Dynamic Lists</h2>
+            <p>
+                Dynamic lists are lists where the data is not static but can change over time (e.g., fetched from an API or updated by user input). React makes it easy to render and update dynamic lists.
+            </p>
+            <h3>Example: Dynamic List with Add and Remove Functionality</h3>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function App() {
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState("");
+
+  const addTask = () => {
+    if (task.trim() !== "") {
+      setTasks([...tasks, { id: Date.now(), text: task }]);
+      setTask("");
+    }
+  };
+
+  const removeTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        placeholder="Enter a task"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      /&gt;
+      &lt;button onClick={addTask}&gt;Add Task&lt;/button&gt;
+
+      &lt;ul&gt;
+        {tasks.map((task) => (
+          &lt;li key={task.id}&gt;
+            {task.text} &lt;button onClick={() => removeTask(task.id)}&gt;❌&lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h3>Key Points:</h3>
+            <ul>
+                <li>Use
+                    <code>useState</code> to manage the list data.
+                </li>
+                <li>Use
+                    <code>map()</code> to render the list dynamically.
+                </li>
+                <li>Provide a
+                    <b>unique key</b> for each list item.
+                </li>
+            </ul>
+            <h2>13. Task: Create a Dynamic List of Users</h2>
+            <p>
+                Create a dynamic list of users where you can add and remove users. Each user should have a name and an email.
+            </p>
+            <h3>Example Solution</h3>
+            <pre>
+                <code>
+                    import { useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const addUser = () => {
+    if (name.trim() !== "" && email.trim() !== "") {
+      setUsers([...users, { id: Date.now(), name, email }]);
+      setName("");
+      setEmail("");
+    }
+  };
+
+  const removeUser = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      /&gt;
+      &lt;input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      /&gt;
+      &lt;button onClick={addUser}&gt;Add User&lt;/button&gt;
+
+      &lt;ul&gt;
+        {users.map((user) => (
+          &lt;li key={user.id}&gt;
+            &lt;strong&gt;{user.name}&lt;/strong&gt; - {user.email}
+            &lt;button onClick={() => removeUser(user.id)}&gt;❌&lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+            <h2>14. Summary</h2>
+            <ul>
+                <li>The
+                    <code>map()</code> function is used to transform arrays and render dynamic lists in React.
+                </li>
+                <li>Each item in a list must have a
+                    <b>unique key</b> to help React efficiently update the UI.
+                </li>
+                <li>Dynamic lists can be created and updated using
+                    <code>useState</code> and
+                    <code>map()</code>.
+                </li>
+            </ul>
+
+            <h1>Class 05: React Router DOM</h1>
+
+            <h2>1. Introduction to React Router DOM</h2>
+            <p>
+              React Router DOM ek library hai jo React applications mein routing ko handle karti hai. Iska use Single Page Applications (SPAs) mein different pages ya components ko render karne ke liye kiya jata hai, bina page reload kiye.
+            </p>
+            <ul>
+              <li><strong>SPA (Single Page Application):</strong> Ek web application jo ek hi page load karti hai aur uske baad dynamically content ko update karti hai.</li>
+              <li><strong>Routing:</strong> URL ke hisaab se different components ko render karna.</li>
+            </ul>
+          
+            <h2>2. Installation</h2>
+            <p>
+              React Router DOM ko use karne ke liye pehle ise install karna hoga:
+            </p>
+            <pre><code>npm install react-router-dom</code></pre>
+          
+            <h2>3. Basic Setup</h2>
+            <p>
+              React Router DOM ka basic setup karna:
+            </p>
+            <pre><code>
+          import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+          
+          function App() {
+            return (
+              &lt;Router&gt;
+                &lt;Routes&gt;
+                  &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+                  &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+                  &lt;Route path="/contact" element={&lt;Contact /&gt;} /&gt;
+                &lt;/Routes&gt;
+              &lt;/Router&gt;
+            );
+          }
+            </code></pre>
+            <ul>
+              <li><strong>&lt;Router&gt;:</strong> Ye app ko routing capabilities provide karta hai.</li>
+              <li><strong>&lt;Routes&gt;:</strong> Ye multiple routes ko define karne ke liye use hota hai.</li>
+              <li><strong>&lt;Route&gt;:</strong> Har route ke liye path aur element specify karte hain.</li>
+            </ul>
+          
+            <h2>4. Example Components</h2>
+            <p>
+              Home, About, aur Contact components ka example:
+            </p>
+            <pre><code>
+          function Home() {
+            return &lt;h1&gt;Home Page&lt;/h1&gt;;
+          }
+          
+          function About() {
+            return &lt;h1&gt;About Us&lt;/h1&gt;;
+          }
+          
+          function Contact() {
+            return &lt;h1&gt;Contact Us&lt;/h1&gt;;
+          }
+            </code></pre>
+          
+            <h2>5. Navigation with &lt;Link&gt;</h2>
+            <p>
+              React Router DOM mein navigation ke liye <code>&lt;Link&gt;</code> component ka use karte hain:
+            </p>
+            <pre><code>
+          import { Link } from 'react-router-dom';
+          
+          function Navbar() {
+            return (
+              &lt;nav&gt;
+                &lt;Link to="/"&gt;Home&lt;/Link&gt;
+                &lt;Link to="/about"&gt;About&lt;/Link&gt;
+                &lt;Link to="/contact"&gt;Contact&lt;/Link&gt;
+              &lt;/nav&gt;
+            );
+          }
+            </code></pre>
+          
+            <h2>6. Dynamic Routing</h2>
+            <p>
+              Dynamic routing ke liye URL parameters ka use karte hain:
+            </p>
+            <pre><code>
+          &lt;Route path="/user/:id" element={&lt;User /&gt;} /&gt;
+          
+          function User() {
+            const { id } = useParams();
+            return &lt;h1&gt;User ID: {id}&lt;/h1&gt;;
+          }
+            </code></pre>
+          
+            <h2>7. Nested Routes</h2>
+            <p>
+              Nested routes ko define karne ke liye <code>&lt;Outlet&gt;</code> ka use karte hain:
+            </p>
+            <pre><code>
+          &lt;Route path="/dashboard" element={&lt;Dashboard /&gt;}&gt;
+            &lt;Route path="profile" element={&lt;Profile /&gt;} /&gt;
+            &lt;Route path="settings" element={&lt;Settings /&gt;} /&gt;
+          &lt;/Route&gt;
+          
+          function Dashboard() {
+            return (
+              &lt;div&gt;
+                &lt;h1&gt;Dashboard&lt;/h1&gt;
+                &lt;Outlet /&gt;
+              &lt;/div&gt;
+            );
+          }
+            </code></pre>
+          
+            <h2>8. 404 Page (Not Found)</h2>
+            <p>
+              Agar koi route match nahi karta hai toh 404 page dikhane ke liye:
+            </p>
+            <pre><code>
+          &lt;Route path="*" element={&lt;NotFound /&gt;} /&gt;
+          
+          function NotFound() {
+            return &lt;h1&gt;404 - Page Not Found&lt;/h1&gt;;
+          }
+            </code></pre>
+          
+            <h2>9. Programmatic Navigation</h2>
+            <p>
+              Programmatically navigate karne ke liye <code>useNavigate</code> hook ka use karte hain:
+            </p>
+            <pre><code>
+          import { useNavigate } from 'react-router-dom';
+          
+          function Login() {
+            const navigate = useNavigate();
+            return (
+              &lt;button onClick={() => navigate('/dashboard')}&gt;
+                Login
+              &lt;/button&gt;
+            );
+          }
+            </code></pre>
+          
+            <h2>10. Conclusion</h2>
+            <p>
+              React Router DOM ek powerful tool hai jo SPAs mein routing ko handle karta hai. Iska use karke aap dynamic aur interactive web applications bana sakte hain.
+            </p>
+
+
+
+            <h1>React useEffect Hook Notes</h1>
+
+            <!-- Introduction -->
+            <h2>1. Introduction to useEffect</h2>
+            <h3>What is useEffect?</h3>
+            <p>
+                <code>useEffect</code> ek React Hook hai jo functional components mein <b>side effects</b> ko handle karne ke liye use hota hai. Side effects woh operations hote hain jo component ke render ke baad chalte hain, jaise data fetching, DOM manipulation, ya subscriptions.
+            </p>
+            <p>
+                Yeh class components ke lifecycle methods (<code>componentDidMount</code>, <code>componentDidUpdate</code>, <code>componentWillUnmount</code>) ka replacement hai.
+            </p>
+
+            <h3>Why Use useEffect?</h3>
+            <ul>
+                <li><b>Side Effects Manage Karna:</b> API calls, event listeners, ya manual DOM updates ko organize karta hai.</li>
+                <li><b>Code Cleanliness:</b> Side effects ko component ke main logic se alag rakhta hai.</li>
+                <li><b>Flexibility:</b> Dependency array ke through control deta hai ki effect kab run kare.</li>
+            </ul>
+
+            <h2>2. Syntax of useEffect</h2>
+            <pre>
+                <code>
+import { useEffect } from "react";
+
+useEffect(() => {
+  // Side effect logic yahan likhein
+  return () => {
+    // Cleanup logic (optional)
+  };
+}, [dependencies]);
+                </code>
+            </pre>
+            <h3>Breakdown</h3>
+            <ul>
+                <li><b>Callback Function:</b> Yeh woh code hai jo effect ke roop mein run hota hai.</li>
+                <li><b>Cleanup Function:</b> Yeh optional hai aur effect ke dobara chalne se pehle ya component unmount hone par chalti hai.</li>
+                <li><b>Dependency Array:</b> Yeh batata hai ki effect kab run karega:
+                    <ul>
+                        <li><b>[]</b> (Empty): Sirf mount par ek baar chalega.</li>
+                        <li><b>[var1, var2]</b>: Jab var1 ya var2 change honge, tab chalega.</li>
+                        <li><b>Omitted</b>: Har render par chalega.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>3. Common Use Cases</h2>
+            <h3>1. Data Fetching</h3>
+            <p>
+                API se data fetch karne ke liye <code>useEffect</code> ka use hota hai jab component mount hota hai.
+            </p>
+            <h4>Example: Fetching Users from API</h4>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error:", error));
+  }, []); // Empty array: runs only once on mount
+
+  if (loading) return <p>Loading...</p>;
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default UserList;
+                </code>
+            </pre>
+
+            <h3>2. Event Listeners</h3>
+            <p>
+                Browser events (jaise window resize) ko handle karne ke liye <code>useEffect</code> ka use hota hai, aur cleanup se memory leaks roke jate hain.
+            </p>
+            <h4>Example: Window Resize Tracker</h4>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function WindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup: Event listener remove karna
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array: runs once on mount
+
+  return <p>Window Width: {width}px</p>;
+}
+
+export default WindowWidth;
+                </code>
+            </pre>
+
+            <h3>3. Dynamic Updates</h3>
+            <p>
+                Jab koi state ya prop change hota hai, tab effect ko rerun karne ke liye dependency array ka use hota hai.
+            </p>
+            <h4>Example: Counter Logger</h4>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Count updated to:", count);
+  }, [count]); // Runs whenever count changes
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
+                </code>
+            </pre>
+
+            <h2>4. Cleanup in useEffect</h2>
+            <h3>Why Cleanup?</h3>
+            <ul>
+                <li><b>Memory Leaks Prevent Karna:</b> Event listeners ya subscriptions ko remove karna zaroori hai jab component unmount hota hai.</li>
+                <li><b>Side Effects Control Karna:</b> Har effect ke pehle purana effect clean hota hai.</li>
+            </ul>
+            <h4>Example: Timer with Cleanup</h4>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prev) => prev + 1);
+    }, 1000);
+
+    // Cleanup: Interval clear karna
+    return () => clearInterval(interval);
+  }, []); // Empty array: runs once on mount
+
+  return <p>Seconds: {seconds}</p>;
+}
+
+export default Timer;
+                </code>
+            </pre>
+
+            <h2>5. useEffect vs. Lifecycle Methods</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>useEffect</th>
+                    <th>Class Lifecycle Methods</th>
+                </tr>
+                <tr>
+                    <td>Purpose</td>
+                    <td>Side effects handle karta hai</td>
+                    <td>Mount, update, unmount ke liye alag methods</td>
+                </tr>
+                <tr>
+                    <td>Syntax</td>
+                    <td>Ek hook mein sab</td>
+                    <td>Multiple methods (componentDidMount, etc.)</td>
+                </tr>
+                <tr>
+                    <td>Execution</td>
+                    <td>Dependencies par depend karta hai</td>
+                    <td>Fixed lifecycle phases</td>
+                </tr>
+                <tr>
+                    <td>Cleanup</td>
+                    <td>Return function se</td>
+                    <td>componentWillUnmount mein</td>
+                </tr>
+            </table>
+
+            <h2>6. Real-World Use Cases</h2>
+            <h3>1. API Data Fetching with Search</h3>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function SearchUsers() {
+  const [query, setQuery] = useState("");
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    if (query) {
+      fetch(`https://jsonplaceholder.typicode.com/users?name_like=${query}`)
+        .then((response) => response.json())
+        .then((data) => setUsers(data));
+    }
+  }, [query]); // Runs whenever query changes
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search users..."
+      />
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default SearchUsers;
+                </code>
+            </pre>
+
+            <h3>2. Subscription Setup</h3>
+            <p>
+                Real-time data ke liye subscriptions setup karna (e.g., WebSocket).
+            </p>
+            <pre>
+                <code>
+import { useEffect } from "react";
+
+function Chat() {
+  useEffect(() => {
+    const socket = new WebSocket("wss://example.com");
+
+    socket.onmessage = (event) => {
+      console.log("Message received:", event.data);
+    };
+
+    // Cleanup: WebSocket close karna
+    return () => socket.close();
+  }, []);
+
+  return <p>Chat is active!</p>;
+}
+
+export default Chat;
+                </code>
+            </pre>
+
+            <h2>7. Best Practices</h2>
+            <ul>
+                <li><b>Dependencies Sahi Rakhein:</b> Effect ke andar jo bhi variables use ho rahe hain, unko dependency array mein daalein.</li>
+                <li><b>Cleanup Use Karein:</b> Event listeners, intervals, ya subscriptions ke liye cleanup zaroori hai.</li>
+                <li><b>Logic Extract Karein:</b> Bade effects ko alag functions mein break karein readability ke liye.</li>
+                <li><b>Avoid Infinite Loops:</b> Dependency array ke bina ya galat dependencies se infinite re-renders ho sakte hain.</li>
+            </ul>
+
+            <h2>8. Task: Build a Real-Time Clock</h2>
+            <p>
+                Ek clock banayein jo har second update ho aur component unmount hone par ruk jaye.
+            </p>
+            <h3>Solution</h3>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function Clock() {
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return <h2>Current Time: {time}</h2>;
+}
+
+export default Clock;
+                </code>
+            </pre>
+
+            <h2>9. Summary</h2>
+            <ul>
+                <li><code>useEffect</code> side effects ko handle karta hai jaise data fetching aur event listeners.</li>
+                <li>Dependency array se control hota hai ki effect kab chalega.</li>
+                <li>Cleanup function memory leaks ko prevent karta hai.</li>
+                <li>Yeh modern React ka core part hai aur lifecycle methods ka replacement hai.</li>
+            </ul>
+          
+
+            <!-- useEffect -->
+            <h2>1. useEffect Hook</h2>
+            <h3>What is useEffect?</h3>
+            <p>
+                <code>useEffect</code> side effects (jaise API calls, event listeners) ko handle karta hai functional components mein. Yeh lifecycle methods ka kaam karta hai.
+            </p>
+
+            <h3>Why Use useEffect?</h3>
+            <ul>
+                <li><b>Side Effects:</b> Data fetching, DOM updates ko organize karta hai.</li>
+                <li><b>Controlled Execution:</b> Dependency array batata hai effect kab chale.</li>
+                <li><b>Cleanup:</b> Memory leaks rokne ke liye cleanup function.</li>
+            </ul>
+
+            <h3>Syntax</h3>
+            <pre>
+                <code>
+import { useEffect } from "react";
+
+useEffect(() => {
+  // Side effect
+  return () => {
+    // Cleanup
+  };
+}, [dependencies]);
+                </code>
+            </pre>
+            <h4>Breakdown</h4>
+            <ul>
+                <li><b>Callback:</b> Effect ka logic.</li>
+                <li><b>Cleanup:</b> Unmount ya rerun se pehle chalti hai.</li>
+                <li><b>Dependencies:</b>
+                    <ul>
+                        <li><b>[]</b>: Ek baar mount par.</li>
+                        <li><b>[var1]</b>: var1 change hone par.</li>
+                        <li><b>Omitted</b>: Har render par (avoid karein).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Examples</h3>
+            <h4>1. Data Fetching with axios</h4>
+            <p>
+                Ek baar API call jab component mount hota hai.
+            </p>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users?_limit=5")
+      .then((response) => {
+        setUsers(response.data);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error:", error));
+  }, []); // Empty array: no re-runs
+
+  if (loading) return <p>Loading...</p>;
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default UserList;
+                </code>
+            </pre>
+            <h4>Setup</h4>
+            <p>Install axios: <code>npm install axios</code></p>
+
+            <h4>2. Event Listener</h4>
+            <p>
+                Window resize track karna aur cleanup.
+            </p>
+            <pre>
+                <code>
+import { useState, useEffect } from "react";
+
+function WindowSize() {
+  const [size, setSize] = useState({ width: window.innerWidth });
+
+  useEffect(() => {
+    const handleResize = () => setSize({ width: window.innerWidth });
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return <p>Window Width: {size.width}px</p>;
+}
+
+export default WindowSize;
+                </code>
+            </pre>
+
+            <h4>3. Debounced Search with axios</h4>
+            <p>
+                Search input ke liye debounced API call, infinite calls se bachne ke liye.
+            </p>
+            <pre>
+                <code>
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
+
+function SearchPosts() {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const debounceRef = useRef(null);
+
+  useEffect(() => {
+    if (query) {
+      // Debounce API call
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(() => {
+        axios
+          .get(`https://jsonplaceholder.typicode.com/posts?_limit=5&title_like=${query}`)
+          .then((response) => setResults(response.data))
+          .catch((error) => console.error("Error:", error));
+      }, 500); // 500ms delay
+
+      // Cleanup timeout
+      return () => clearTimeout(debounceRef.current);
+    } else {
+      setResults([]);
+    }
+  }, [query]);
+
+  return (
+    <div>
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search posts..."
+      />
+      <ul>
+        {results.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default SearchPosts;
+                </code>
+            </pre>
+            <p><b>Note:</b> Debouncing se frequent API calls roke gaye hain.</p>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><b>Dependencies Clear:</b> Effect ke variables ko array mein daalein.</li>
+                <li><b>Cleanup:</b> Timers, listeners, ya API requests cancel karein.</li>
+                <li><b>Debouncing:</b> Search jaise cases mein API calls ko limit karein.</li>
+                <li><b>Error Handling:</b> axios ke saath .catch ya try-catch use karein.</li>
+            </ul>
+
+            <!-- useContext -->
+            <h2>2. useContext Hook</h2>
+            <h3>What is useContext?</h3>
+            <p>
+                <code>useContext</code> Context API ke data ko access karta hai, global state manage karne ke liye, prop drilling ke bina.
+            </p>
+
+            <h3>Why Use useContext?</h3>
+            <ul>
+                <li><b>Global State:</b> App-wide data (theme, auth) share karta hai.</li>
+                <li><b>No Prop Drilling:</b> Deep components mein data seedha pohunchata hai.</li>
+                <li><b>Easy to Use:</b> Functional components ke saath simple syntax.</li>
+            </ul>
+
+            <h3>Syntax</h3>
+            <pre>
+                <code>
+import { useContext } from "react";
+
+const value = useContext(Context);
+                </code>
+            </pre>
+            <h4>Breakdown</h4>
+            <ul>
+                <li><b>Context:</b> <code>createContext</code> se banaya jata hai.</li>
+                <li><b>value:</b> Provider se aaya data.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <h4>1. Theme Switcher</h4>
+            <p>
+                Theme ko components mein share karna.
+            </p>
+            <pre>
+                <code>
+import { createContext, useContext, useState } from "react";
+
+const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemeButton() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  return (
+    <button
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      style={{
+        background: theme === "dark" ? "#333" : "#fff",
+        color: theme === "dark" ? "#fff" : "#000",
+        padding: "10px",
+      }}
+    >
+      Switch to {theme === "light" ? "Dark" : "Light"}
+    </button>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <h2>Theme App</h2>
+      <ThemeButton />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+
+            <h4>2. User Auth</h4>
+            <p>
+                User login status ko share karna.
+            </p>
+            <pre>
+                <code>
+import { createContext, useContext, useState } from "react";
+
+const AuthContext = createContext();
+
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+
+  const login = (name) => setUser({ name });
+  const logout = () => setUser(null);
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+function UserInfo() {
+  const { user, logout } = useContext(AuthContext);
+
+  return user ? (
+    <p>
+      Logged in as {user.name} <button onClick={logout}>Logout</button>
+    </p>
+  ) : (
+    <p>Not logged in</p>
+  );
+}
+
+function LoginForm() {
+  const { login } = useContext(AuthContext);
+  const [name, setName] = useState("");
+
+  return (
+    <div>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter name"
+      />
+      <button onClick={() => login(name)}>Login</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <UserInfo />
+      <LoginForm />
+    </AuthProvider>
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><b>Specific Contexts:</b> Har purpose ke liye alag context banayein.</li>
+                <li><b>Stable Values:</b> Complex objects ke liye <code>useMemo</code> consider karein.</li>
+                <li><b>Simple State:</b> Complex logic ke liye <code>useReducer</code> better hai.</li>
+            </ul>
+
+            <!-- useRef -->
+            <h2>3. useRef Hook</h2>
+            <h3>What is useRef?</h3>
+            <p>
+                <code>useRef</code> mutable reference object banata hai jo lifecycle mein persist karta hai. DOM access ya non-rendering state ke liye use hota hai.
+            </p>
+
+            <h3>Why Use useRef?</h3>
+            <ul>
+                <li><b>DOM Manipulation:</b> Elements ko direct access (jaise focus).</li>
+                <li><b>Persistent Values:</b> Values jo re-renders par reset na ho.</li>
+                <li><b>No Re-renders:</b> Ref changes UI update nahi karte.</li>
+            </ul>
+
+            <h3>Syntax</h3>
+            <pre>
+                <code>
+import { useRef } from "react";
+
+const ref = useRef(initialValue);
+                </code>
+            </pre>
+            <h4>Breakdown</h4>
+            <ul>
+                <li><b>ref:</b> <code>current</code> property mein value store hota hai.</li>
+                <li><b>initialValue:</b> Starting value.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <h4>1. Input Focus</h4>
+            <p>
+                Button click par input focus karna.
+            </p>
+            <pre>
+                <code>
+import { useRef } from "react";
+
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Type here" />
+      <button onClick={focusInput}>Focus</button>
+    </div>
+  );
+}
+
+export default FocusInput;
+                </code>
+            </pre>
+
+            <h4>2. Timer Control</h4>
+            <p>
+                Timer ko control karne ke liye ref ka use.
+            </p>
+            <pre>
+                <code>
+import { useState, useRef, useEffect } from "react";
+
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setSeconds((prev) => prev + 1);
+    }, 1000);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const stopTimer = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  return (
+    <div>
+      <p>Seconds: {seconds}</p>
+      <button onClick={stopTimer}>Stop Timer</button>
+    </div>
+  );
+}
+
+export default Timer;
+                </code>
+            </pre>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><b>DOM-Specific:</b> Sirf jab DOM access zaroori ho tab use karein.</li>
+                <li><b>State vs Ref:</b> UI updates ke liye <code>useState</code> use karein.</li>
+                <li><b>Ref for Cleanup:</b> Intervals ya timeouts ke liye ref acha hai.</li>
+            </ul>
+
+            <!-- Combined Example -->
+            <h2>4. Combining useEffect, useContext, axios & useRef</h2>
+            <h3>Example: Blog Dashboard</h3>
+            <p>
+                Theme switch, API data fetch, aur input focus ka combination.
+            </p>
+            <pre>
+                <code>
+import { createContext, useContext, useState, useEffect, useRef } from "react";
+import axios from "axios";
+
+const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function BlogDashboard() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  const [posts, setPosts] = useState([]);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts?_limit=3")
+      .then((response) => setPosts(response.data))
+      .catch((error) => console.error("Error:", error));
+  }, []);
+
+  return (
+    <div
+      style={{
+        background: theme === "dark" ? "#333" : "#fff",
+        color: theme === "dark" ? "#fff" : "#000",
+        padding: "20px",
+      }}
+    >
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Toggle Theme
+      </button>
+      <input ref={inputRef} placeholder="Search posts..." />
+      <button onClick={() => inputRef.current.focus()}>Focus Input</button>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <BlogDashboard />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+
+            <h2>5. Tasks</h2>
+            <h3>Task 1: Quote Generator</h3>
+            <p>
+                Ek app banayein jo <code>useEffect</code> aur <code>axios</code> se random quote API se quote fetch kare, aur <code>useRef</code> se button focus rakhe.
+            </p>
+            <h4>Solution</h4>
+            <pre>
+                <code>
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
+
+function QuoteGenerator() {
+  const [quote, setQuote] = useState("");
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    fetchQuote();
+    buttonRef.current.focus();
+  }, []);
+
+  const fetchQuote = () => {
+    axios
+      .get("https://api.quotable.io/random")
+      .then((response) => setQuote(response.data.content))
+      .catch((error) => console.error("Error:", error));
+  };
+
+  return (
+    <div>
+      <p>{quote || "Loading..."}</p>
+      <button ref={buttonRef} onClick={fetchQuote}>
+        New Quote
+      </button>
+    </div>
+  );
+}
+
+export default QuoteGenerator;
+                </code>
+            </pre>
+
+            <h3>Task 2: Currency Switcher</h3>
+            <p>
+                Ek app jo <code>useContext</code> se currency (USD/INR) switch kare aur <code>useEffect</code> se page title update kare.
+            </p>
+            <h4>Solution</h4>
+            <pre>
+                <code>
+import { createContext, useContext, useState, useEffect } from "react";
+
+const CurrencyContext = createContext();
+
+function CurrencyProvider({ children }) {
+  const [currency, setCurrency] = useState("USD");
+
+  return (
+    <CurrencyContext.Provider value={{ currency, setCurrency }}>
+      {children}
+    </CurrencyContext.Provider>
+  );
+}
+
+function PriceDisplay() {
+  const { currency, setCurrency } = useContext(CurrencyContext);
+  const price = 100;
+
+  useEffect(() => {
+    document.title = `Price in ${currency}`;
+  }, [currency]);
+
+  return (
+    <div>
+      <p>
+        Price: {currency === "USD" ? `$${price}` : `₹${price * 83}`}
+      </p>
+      <button onClick={() => setCurrency(currency === "USD" ? "INR" : "USD")}>
+        Switch to {currency === "USD" ? "INR" : "USD"}
+      </button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <CurrencyProvider>
+      <PriceDisplay />
+    </CurrencyProvider>
+  );
+}
+
+export default App;
+                </code>
+            </pre>
+
+            <h2>6. Summary</h2>
+            <ul>
+                <li><code>useEffect</code>: Controlled API calls (<code>axios</code>) aur listeners, debouncing se infinite calls roke.</li>
+                <li><code>useContext</code>: Global state ke liye, theme ya auth share karne mein.</li>
+                <li><code>useRef</code>: DOM access ya persistent storage, re-renders ke bina.</li>
+                <li><code>axios</code>: Clean API calls ke liye, error handling ke saath.</li>
+            </ul>
+        </div>
+    </body>
+</html>
